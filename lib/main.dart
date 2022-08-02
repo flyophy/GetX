@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:getx/home.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    //statusBarIconBrightness: Brightness.dark,
+    //statusBarBrightness: Brightness.dark,
+    //systemNavigationBarColor: Colors.transparent,
+    //systemNavigationBarDividerColor: Colors.transparent,
+    //systemNavigationBarIconBrightness: Brightness.dark,
+  ));
+
   runApp(const MyApp());
 }
 
@@ -14,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Weight Tracker',
-      //theme: ThemeData(primarySwatch: Colors.blue,),
+      theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Colors.black)),
       home: Home(),
     );
   }
